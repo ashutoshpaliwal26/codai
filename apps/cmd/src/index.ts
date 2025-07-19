@@ -54,9 +54,13 @@ watcher
   .on('unlinkDir', path => logTreeChange(path, 'folder removed'));
 
 async function getTreeData() {
-  const dirPath = path.resolve(__dirname, "./workspace");
-  const tree = await buildTree(dirPath);
-  return tree;
+  try{
+    const dirPath = path.resolve(__dirname, "../workspace");
+    const tree = await buildTree(dirPath);
+    return tree;
+  }catch(error){
+    console.log((error as Error).message);
+  }
 }
 
 async function logTreeChange(p: string, event: string) {
