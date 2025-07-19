@@ -34,7 +34,7 @@ jobs:
                 run: |
                     gcloud compute ssh ${{ secrets.GCE_SSH_USER }}@${{ secrets.GCE_INSTANCE }} \
                         --zone=${{ secrets.GCP_ZONE }} \
-                        --command="cd /path/to/your/app && git pull origin main && docker-compose down && docker-compose up -d"
+                        --command="cd /home/${{ secrets.GCE_SSH_USER }}/ide-server && git pull origin && npm install && npm run dev"
 
 
             
