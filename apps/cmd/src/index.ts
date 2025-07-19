@@ -6,6 +6,19 @@ import path from 'path';
 import { buildTree } from './utils/buildTree'
 import chokidar from 'chokidar'
 import SocketServer from './socket/sockerServer'
+import { exec } from 'child_process'
+
+exec("mkdir workspace", (error, stdout, stderr) => {
+  if(error) {
+    console.log(`Error : ${error.message}`);
+    return;
+  }
+  if(stderr){
+    console.log(`STDERR : ${stderr}`);
+    return;
+  }
+  console.log(`stdout : ${stdout}`);
+})
 
 const app = express();
 const server = createServer(app);
