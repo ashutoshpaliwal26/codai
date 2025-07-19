@@ -1,10 +1,11 @@
+import { socketApiClient } from "@/lib/apiClient";
 import { FileStates } from "@/types";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 // Action 
 export const fetchFiles = createAsyncThunk("fetchFiles", async () => {
     try{
-        const res = await axios.get("http://localhost:8001/get-files");
+        const res = await socketApiClient.get("/get-files");
         console.log("Response : ", res.data);
         if(res.status === 200){
             return res.data.tree
