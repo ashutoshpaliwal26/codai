@@ -8,6 +8,8 @@ import chokidar from 'chokidar'
 import SocketServer from './socket/sockerServer'
 import { exec } from 'child_process'
 
+console.log({"<<<<<<<<<< SOCKET SERVER STARTING >>>>>>"})
+
 exec("mkdir workspace", (error, stdout, stderr) => {
   if(error) {
     console.log(`Error : ${error.message}`);
