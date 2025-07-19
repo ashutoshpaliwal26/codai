@@ -24,9 +24,11 @@ socketServer.run();
 app.use(cors());
 app.use(express.json());
 
+console.log(path.join(__dirname, "../workspace"))
+
 
 // Watcher Setup
-const watcher = chokidar.watch('./workspace', {
+const watcher = chokidar.watch('../workspace', {
   persistent: true,
   ignoreInitial: true,
   depth: Infinity,

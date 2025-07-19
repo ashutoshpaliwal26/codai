@@ -10,7 +10,7 @@ dotenv.config({
 });
 
 async function db() {
-    await connectToDb("mongodb://admin:root@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.5.3");
+    await connectToDb(process.env.MONGO_DB_URI as string);
 }
 
 db();
