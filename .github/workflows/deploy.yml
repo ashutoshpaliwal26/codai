@@ -32,7 +32,7 @@ jobs:
                 run: |
                     gcloud compute ssh ${{ secrets.GCE_SSH_USER }}@${{ secrets.GCE_INSTANCE }} \
                         --zone=${{ secrets.GCP_ZONE }} \
-                        --command="cd /home/${{ secrets.GCE_SSH_USER }}/ide-server && git pull origin && npm install && mkdir /apps/cmd/workspace && npm run dev"
+                        --command="cd /home/${{ secrets.GCE_SSH_USER }}/ide-server && git pull origin && npm install && cd /apps/cmd/ && mkdir workspace  && npm run build && npm start"
 
 
             
