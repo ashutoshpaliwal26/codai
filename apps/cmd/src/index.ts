@@ -1,5 +1,5 @@
 import express, { Request, Response } from 'express'
-import { createServer } from 'http'
+import { createServer } from 'https'
 import cors from 'cors'
 import { Server } from 'socket.io'
 import path from 'path';
