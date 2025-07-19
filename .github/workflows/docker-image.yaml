@@ -33,4 +33,4 @@ jobs:
         with:
           context: ./apps/code-editor
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:authentication
+          tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:ide
