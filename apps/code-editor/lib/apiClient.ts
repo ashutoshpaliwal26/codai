@@ -3,6 +3,10 @@ const apiClient = axios.create({
     baseURL : process.env.NEXT_PUBLIC_API_URL
 })
 
+export const socketApiClient = axios.create({
+    baseURL : process.env.NEXT_PUBLIC_SOCKET_URL
+})
+
 export const serverAuthentication = async (token : string) => {
     const res = await apiClient.get("auth/protect", {
         headers : {
@@ -14,5 +18,6 @@ export const serverAuthentication = async (token : string) => {
     }
     return false;
 }
+
 
 export default apiClient;

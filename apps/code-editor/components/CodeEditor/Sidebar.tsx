@@ -6,8 +6,8 @@ import { ChevronDown, ChevronRight, File, FilePlus, Folder, FolderClosed, Folder
 import React, { useCallback, useEffect, useState } from "react"
 import FileCreateCard from "./fileCreateCard"
 import { useEditor } from "@/contexts/EditorContext"
-import axios from "axios"
 import { useSocket } from "@/provider/SocketProvider"
+import { socketApiClient } from "@/lib/apiClient"
 
 
 interface SidebarProps {
@@ -104,7 +104,7 @@ const Sidebar: React.FC<SidebarProps> = ({ width, onResizeStart }) => {
 
   const fetchFiles = async() => {
     try{
-      const res = await axios.get("http://localhost:8001/get-files");
+      const res = await socketApiClient.get("/get-files");
 
       if(res.status === 200){
         setFiles(res.data.tree);
