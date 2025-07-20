@@ -28,7 +28,7 @@ const app = express();
 
 // 🔒 Create HTTPS server
 const server = createServer(app);
-const PORT = process.env.CMD_PORT || 8001;
+const PORT = Number(process.env.CMD_PORT) || 8001;
 const io = new Server(server, {
   cors: {
     origin: "*"
