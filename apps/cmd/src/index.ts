@@ -77,6 +77,9 @@ app.get("/get-files", async (req: Request, res: Response) => {
   return res.json({ success: false, tree: await getTreeData() });
 })
 
-server.listen(PORT, () => console.log(`|------- SERVER RUNNING ON PORT : ${PORT} --------------|`))
+server.listen(PORT, "0.0.0.0", 
+  () => 
+    console.log(`|------- SERVER RUNNING ON PORT : ${PORT} --------------|`)
+)
 
 
