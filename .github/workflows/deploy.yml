@@ -34,7 +34,7 @@ jobs:
               npm install &&
               cd apps/cmd &&
               npm run build &&
-              fuser -k 8001/tcp || true &&
+              sudo fuser -k 8001/tcp || true &&
               nohup npm start > output.log 2>&1 &
               sudo systemctl restart nginx
             '"
