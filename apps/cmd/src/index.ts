@@ -7,7 +7,7 @@ import chokidar from 'chokidar'
 import SocketServer from './socket/sockerServer'
 import fs from 'fs'
 import { exec } from 'child_process'
-import { createServer } from 'https'
+import { createServer } from 'http'
 
 console.log("<<<<<<<<<< SOCKET SERVER STARTING >>>>>>");
 
@@ -22,18 +22,12 @@ exec("mkdir workspace", (error, stdout, stderr) => {
   }
   console.log(`stdout : ${stdout}`);
 })
-const options = {
-  key: fs.readFileSync(path.join(__dirname, '../../../../key.pem')),
-  cert: fs.readFileSync(path.join(__dirname, '../../../../cert.pem')),
-};
-
-console.log({options});
 
 const app = express();
 
 
 // 🔒 Create HTTPS server
-const server = createServer(options, app);
+const server = createServer(app);
 const PORT = process.env.CMD_PORT || 8001;
 const io = new Server(server, {
   cors: {
