@@ -29,12 +29,9 @@ jobs:
             --zone=${{ secrets.GCP_ZONE }} \
             --quiet \
             --command="bash -c '
-              cd /home/${{ secrets.GCE_SSH_USER }}/codeai/ &&
-              git pull origin main &&
-              npm install &&
-              cd apps/cmd &&
-              npm run build &&
-              sudo fuser -k 8001/tcp || true &&
+              cd /home/${{ secrets.GCE_SSH_USER }}/codai && git pull origin main && npm install && \
+              cd apps/cmd && npm install && npm run build && \
+              sudo kill -9 $(sudo lsof -t -i :8001) && \
               nohup npm start > output.log 2>&1 &
               sudo systemctl restart nginx
             '"
