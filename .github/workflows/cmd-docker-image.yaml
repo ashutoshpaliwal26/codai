@@ -1,4 +1,4 @@
-name: Docker Image CI
+name: Docker Image CI [IMG > TAG { CMD }]
 
 on:
   push:
