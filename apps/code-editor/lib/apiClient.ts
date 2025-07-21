@@ -4,7 +4,7 @@ const apiClient = axios.create({
 })
 
 export const socketApiClient = axios.create({
-    baseURL : process.env.NEXT_PUBLIC_SOCKET_URL
+    baseURL : `https://${process.env.NEXT_PUBLIC_SOCKET_URL}`
 })
 
 export const serverAuthentication = async (token : string) => {
