@@ -47,7 +47,7 @@ console.log(path.join(__dirname, "./workspace"))
 
 
 // Watcher Setup
-const watcher = chokidar.watch('../workspace', {
+const watcher = chokidar.watch('./workspace', {
   persistent: true,
   ignoreInitial: true,
   depth: Infinity,
@@ -70,6 +70,7 @@ async function getTreeData() {
 }
 
 async function logTreeChange(p: string, event: string) {
+  console.log("chage");
   io.emit("dir:change", { p, event });
 }
 

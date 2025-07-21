@@ -95,17 +95,12 @@ const Sidebar: React.FC<SidebarProps> = ({ width, onResizeStart }) => {
     setShowContextMenu(null)
   }
 
-  useEffect(() => {
-    socket?.on("dir:change", fetchData);
-    return () => {
-      socket?.off("dir:change", fetchData);
-    }
-  }, [socket])
-
+  
   const fetchFiles = async() => {
+    console.log("print");
     try{
       const res = await socketApiClient.get("/get-files");
-
+      
       if(res.status === 200){
         setFiles(res.data.tree);
       }
@@ -114,7 +109,13 @@ const Sidebar: React.FC<SidebarProps> = ({ width, onResizeStart }) => {
       console.log((err as Error).message)
     }
   }
-
+  
+  useEffect(() => {
+    socket?.on("dir:change",fetchData);
+    return () => {
+      socket?.off("dir:change", fetchData);
+    }
+  }, [socket])
   useEffect(() => {
     fetchFiles();
   }, [])
