@@ -12,6 +12,7 @@ class SocketServer {
 
     private event_handeler () {
         this.io.on("connection", (socket) => {
+          console.log("socket id " , socket.id);
           socket.on('write:cmd', (data) => {
             ptyProcess.write(data);
           })

@@ -32,9 +32,11 @@ const Terminal: React.FC<TermainlProps> = ({ height, onResizeStart }) => {
       })
 
       socket?.on("output:cmd", (data) => {
+        console.log("output:cmd CALLING")
         term.write(data);
       })
     }
+    console.log(socket);
   }, [])
 
   return (
