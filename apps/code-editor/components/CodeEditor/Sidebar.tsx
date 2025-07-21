@@ -82,7 +82,7 @@ const Sidebar: React.FC<SidebarProps> = ({ width, onResizeStart }) => {
 
   const fetchData = useCallback(async (data: any) => {
     console.log("change happen", { data });
-    fetchFiles();
+    await fetchFiles();
   }, [])
   
   function handelCardClose () {
