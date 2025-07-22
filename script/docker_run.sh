@@ -4,7 +4,7 @@
 set -e
 
 # Variables (edit as needed)
-IMAGE_NAME="ashutoshpaliwal/code-editor:ide"
+IMAGE_NAME="ashutoshpaliwal/code-editor:cmd"
 CONTAINER_NAME="cmd"
 DOCKER_COMMAND="echo Hello from inside the container"
 
