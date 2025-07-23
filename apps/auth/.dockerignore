@@ -1,0 +1,27 @@
+# Dpendency Directories
+
+node_modules
+npm-debug.log
+
+
+# Environment files
+.env
+.env.*
+
+# Git and VCS
+.git
+.gitignore
+
+# Docker stuff
+Dockerfile
+.dockerignore
+
+# Editor/IDE files
+*.swp
+*.swo
+*.idea
+.vscode
+
+# Build output (optional if you build locally)
+dist
+build
