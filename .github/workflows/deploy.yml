@@ -29,9 +29,9 @@ jobs:
             --zone=${{ secrets.GCP_ZONE }} \
             --quiet \
             --command="bash -c '
-                cd /home/ashutoshpaliwal26/codai/ && \
-                sudo git pull origin && \
-                cd script && \
+                rm -rf /home/ashutoshpaliwal26/codai/ && \
+                sudo git clone ${{ secrets.GIT_URI }} && \
+                cd /home/ashutoshpaliwal26/codai/script && \
                 sudo chown ashutoshpaliwal26 deploy.sh && \
                 chmod +x deploy.sh && bash deploy.sh
             '"
