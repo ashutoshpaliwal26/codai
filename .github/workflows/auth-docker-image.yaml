@@ -31,14 +31,14 @@ jobs:
       - name: Build and Push Docker Image AUTH SERVICE
         uses: docker/build-push-action@v6
         with:
-          context: ./apps/auth
+          context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:authentication
 
       - name: Build and Push Docker Image CMD SERVICE
         uses: docker/build-push-action@v6
         with:
-          context: .
+          context: ./apps/cmd
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:cmd
         
