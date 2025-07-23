@@ -12,7 +12,7 @@ RUN npm install
 # Build all or target package
 
 # Use this if you're using Turbo
-RUN npx turbo run build --filter=apps/auth
+RUN npx turbo run build --filter=@repo/auth
 
 EXPOSE 8000
 
