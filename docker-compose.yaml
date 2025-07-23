@@ -1,6 +1,7 @@
 services:
   mongo_db:
     image: mongo
+    container_name: db
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: admin
@@ -8,9 +9,12 @@ services:
       MONGO_INITDB_DATABASE: codeai
     volumes:
       - mongo_data:/data/db
+    network:
+      - defualt
   
   auth:
     image: ashutoshpaliwal26/code-editor:auth
+    container_name: auth
     restart: always
     ports: 
       - "8000:8000"
@@ -18,11 +22,16 @@ services:
       MONGO_DB_URI: ${MONGO_DB_URI}
     depends_on:
       - mongo_db
-
+    network:
+      - defualt
+      
   cmd:
     image: ashutoshpaliwal26/code-editor:cmd
+    container_name: cmd
     ports:
       - "8001:8001"
+    network:
+      - defualt
 
 volumes:
   mongo_data:

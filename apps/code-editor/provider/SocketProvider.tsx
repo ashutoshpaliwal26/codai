@@ -15,7 +15,7 @@ export const useSocket = () => {
 
 const SocketProvider = ({ children }: { children: React.ReactNode }) => {
     const socket = useMemo<Socket>(() => {
-        return io(`wss://${process.env.NEXT_PUBLIC_SOCKET_URL}`, {
+        return io(`${process.env.RUN_MODE === "dev" ? "http://localhost:8001" : `wss://${process.env.NEXT_PUBLIC_SOCKET_URL}`}}`, {
             path: "/socket.io",
             transports: ["websocket"],
             secure: true,

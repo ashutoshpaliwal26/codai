@@ -6,7 +6,8 @@ import { authRouter } from './routes/auth';
 import cors from 'cors'
 
 dotenv.config({
-    path : path.resolve(__dirname, "../../../.env")
+    path : path.resolve(__dirname, "../../../.env"),
+    override : true
 });
 
 async function db() {
