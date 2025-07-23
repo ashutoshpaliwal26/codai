@@ -29,6 +29,6 @@ jobs:
             --zone=${{ secrets.GCP_ZONE }} \
             --quiet \
             --command="bash -c '
-              chmod +x ./script/deploy.sh &&
-              bash deploy.sh
+              chmod +x /script/deploy.sh &&
+              bash /script/deploy.sh
             '"
