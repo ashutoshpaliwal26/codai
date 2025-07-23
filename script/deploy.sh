@@ -3,9 +3,8 @@
 # Exit immediately if any command fails
 set -e
 
-
 echo " |->>> Pull recent Changes"
-git pull
+sudo git pull
 
 echo " |->>> Stopping all running Docker containers..."
 docker stop $(docker ps -q) 2>/dev/null || echo " [*] : No running containers."
@@ -20,4 +19,4 @@ echo " |->>> Running docker-compose up --build..."
 docker-compose up --rm mongo_db
 
 echo " |->>> Running Gateway NGINX "
-nginx -t && systemctl restart nginx
+sudo nginx -t && sudo systemctl restart nginx

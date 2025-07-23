@@ -29,9 +29,5 @@ jobs:
             --zone=${{ secrets.GCP_ZONE }} \
             --quiet \
             --command="bash -c '
-              sudo su && \
-              echo pwd && \
-              cd /home/ashutoshpaliwal26/codai/script && \
-              chmod +x deploy.sh && \
-              bash deploy.sh
+            cd /home/ashutoshpaliwal26/codai/script && chmod +x deploy.sh && ./deploy.sh
             '"
