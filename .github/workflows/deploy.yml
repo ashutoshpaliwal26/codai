@@ -29,7 +29,7 @@ jobs:
             --zone=${{ secrets.GCP_ZONE }} \
             --quiet \
             --command="bash -c '
-                rm -rf /home/ashutoshpaliwal26/codai/ && \
+                sudo rm -rf deploy.sh docker-compose.yaml && \
                 curl -O ${{ secrets.DEPLOY_SCRIPT_URI }} && \
                 curl -O ${{ secrets.DOCKER_COMPOSE_URI }} && \
                 sudo chown ashutoshpaliwal26 deploy.sh && \
