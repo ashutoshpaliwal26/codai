@@ -31,7 +31,7 @@ jobs:
             --command="bash -c '
               sudo su && \
               echo pwd && \
-              cd /codeai/script && \
+              cd /home/ashutoshpaliwal26/codai/script && \
               chmod +x deploy.sh && \
               bash deploy.sh
             '"
