@@ -3,10 +3,10 @@
 # Exit immediately if any command fails
 set -e
 
-cd ./codeai
+sudo su
 
 echo " |->>> Pull recent Changes"
-sudo git pull
+cd git pull
 
 echo " |->>> Stopping all running Docker containers..."
 docker stop $(docker ps -q) 2>/dev/null || echo " [*] : No running containers."
@@ -21,4 +21,4 @@ echo " |->>> Running docker-compose up --build..."
 docker-compose up --rm mongo_db
 
 echo " |->>> Running Gateway NGINX "
-sudo nginx -t && sudo systemctl restart nginx
+nginx -t && systemctl restart nginx
