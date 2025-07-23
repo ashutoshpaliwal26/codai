@@ -38,7 +38,7 @@ jobs:
       - name: Build and Push Docker Image CMD SERVICE
         uses: docker/build-push-action@v6
         with:
-          context: ./
+          context: .
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:cmd
         
