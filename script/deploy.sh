@@ -3,9 +3,6 @@
 # Exit immediately if any command fails
 set -e
 
-echo " |->>> Pull recent Changes"
-sudo git pull
-
 echo " |->>> Stopping all running Docker containers..."
 docker stop $(docker ps -q) 2>/dev/null || echo " [*] : No running containers."
 
