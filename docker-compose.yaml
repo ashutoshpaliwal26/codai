@@ -14,7 +14,7 @@ services:
 
   
   auth:
-    image: ashutoshpaliwal26/code-editor:auth
+    image: ashutoshpaliwal26/code-editor:authentication
     container_name: auth
     restart: always
     ports: 
