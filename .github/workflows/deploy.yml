@@ -30,6 +30,7 @@ jobs:
             --quiet \
             --command="bash -c '
               sudo su && \
+              echo pwd && \
               cd /codeai/script && \
               chmod +x deploy.sh && \
               bash deploy.sh
