@@ -1,4 +1,4 @@
-name: Docker Image CI [IMG > TAG { CMD }]
+name: Docker Image CI [IMG > TAG { AUTH }]
 
 on:
   push:
@@ -28,9 +28,23 @@ jobs:
       - name: Setup Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Build and Push Docker Image
+      - name: Build and Push Docker Image AUTH SERVICE
+        uses: docker/build-push-action@v6
+        with:
+          context: ./apps/auth
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:authentication
+
+      - name: Build and Push Docker Image CMD SERVICE
         uses: docker/build-push-action@v6
         with:
           context: ./apps/cmd
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:cmd
+        
+      - name: Build and Push Docker Image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./apps/code-editor
+          push: true
+          tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:ide
