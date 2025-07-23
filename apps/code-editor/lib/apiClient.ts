@@ -1,6 +1,7 @@
 import axios from 'axios'
 const apiClient = axios.create({
-    baseURL : {`https://${process.env.NEXT_PUBLIC_API_URL}`}
+    // baseURL : {${process.env.NEXT_PUBLIC_API_URL}`}
+    baseURL : `https:// ${process.env.NEXT_PUBLIC_API_URL}`
 })
 
 export const socketApiClient = axios.create({
