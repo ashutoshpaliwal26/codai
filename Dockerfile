@@ -10,10 +10,9 @@ COPY . .
 RUN npm install
 
 # Build all or target package
-RUN npm run build --workspace=apps/auth
 
 # Use this if you're using Turbo
-# RUN npx turbo run build --filter=apps/auth
+RUN npx turbo run build --filter=apps/auth
 
 EXPOSE 8000
 
