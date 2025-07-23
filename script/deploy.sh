@@ -17,6 +17,6 @@ echo " |->>> Building and running containers with docker-compose..."
 cd /home/ashutoshpaliwal26/codai  # change this if needed
 
 # Use the correct docker compose syntax (space, not dash) for modern Docker versions
-sudo docker compose --env-file /home/ashutoshpaliwal26/.env up --build -d
+sudo docker compose --env-file .env up --build -d
 
 echo "✅ Deployment completed!"

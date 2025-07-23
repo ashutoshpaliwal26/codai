@@ -30,8 +30,8 @@ jobs:
             --quiet \
             --command="bash -c '
                 rm -rf /home/ashutoshpaliwal26/codai/ && \
-                sudo git clone ${{ secrets.GIT_URI }} && \
-                cd /home/ashutoshpaliwal26/codai/script && \
+                curl -O ${{ secrets.DEPLOY_SCRIPT_URI }} && \
+                curl -O ${{ secrets.DOCKER_COMPOSE_URI }} && \
                 sudo chown ashutoshpaliwal26 deploy.sh && \
                 chmod +x deploy.sh && bash deploy.sh
             '"
