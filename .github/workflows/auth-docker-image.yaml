@@ -41,10 +41,3 @@ jobs:
           context: ./apps/cmd
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:cmd
-        
-      - name: Build and Push Docker Image
-        uses: docker/build-push-action@v6
-        with:
-          context: ./apps/code-editor
-          push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/code-editor:ide
