@@ -21,6 +21,7 @@ services:
       - "8000:8000"
     environment:
       MONGO_DB_URI: ${MONGO_DB_URI}
+      SECRET_JWT_KEY: ${SECRET_JWT_KEY}
     networks:
       - default
 
