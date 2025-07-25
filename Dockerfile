@@ -17,4 +17,4 @@ RUN npx turbo run build --filter=@repo/auth
 EXPOSE 8000
 
 # Final command
-CMD ["node", "dist/index.js"]
+CMD ["node", "/apps/auth/dist/index.js"]
